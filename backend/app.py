@@ -5,10 +5,10 @@ from ai__model import generate_response
 from ml_model import predict_issue
 from models import Ticket
 import pandas as pd
-
+import os 
 app = Flask(__name__)
 CORS(app)
-
+openai.api_key = os.getenv('OPENAI_API_KEY')
 # Initialize cache
 cache = {}
 
